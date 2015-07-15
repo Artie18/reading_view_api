@@ -1,0 +1,31 @@
+{
+  "name": "reading_view_api",
+  "version": "0.0.1",
+  "description": "Backend Service API For Reading View",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Artie18/reading_view_api.git"
+  },
+  "dependencies": {
+    "baucis":       "1.6.x",
+    "reading_view": "0.1.x",
+    "check-types":  "3.3.x",
+    "forever":      "0.14.x"
+  },
+  "keywords": [
+    "reading",
+    "view",
+    "html",
+    "page"
+  ],
+  "author": "Artyom Fedenko <artyomfedenko@hotmail.com> (https://www.mopso.by)",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Artie18/reading_view_api/issues"
+  },
+  "homepage": "https://github.com/Artie18/reading_view_api#readme"
+}
