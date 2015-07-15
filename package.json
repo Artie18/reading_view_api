@@ -11,10 +11,11 @@
     "url": "https://github.com/Artie18/reading_view_api.git"
   },
   "dependencies": {
-    "baucis":       "1.6.x",
     "reading_view": "0.1.x",
     "check-types":  "3.3.x",
-    "forever":      "0.14.x"
+    "forever":      "0.14.x",
+    "body-parser":  "1.13.x",
+    "express":      "4.13.x"
   },
   "keywords": [
     "reading",
