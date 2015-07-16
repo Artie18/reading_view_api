@@ -1,6 +1,7 @@
 // Load dependencies
 var express   = require('express'),
-    routers   = require('./lib/routers/routers');
+    routers   = require('./lib/routers/routers'),
+    config    = require('./config');
 
 var apiRouterFunc  = routers.apiRouter,
     demoRouterFunc = routers.demoRouter;
@@ -22,4 +23,4 @@ demoRouter.get('/index', demoRouterFunc.get.root);
 
 app.use('/api', apiRouter);
 app.use('/demo', demoRouter);
-app.listen(3000);
+app.listen(config.port);
