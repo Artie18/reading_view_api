@@ -28,4 +28,4 @@ rootRouter.get('/', rootRouterFunc.get.root);
 app.use('/api',   apiRouter);
 app.use('/demo',  demoRouter);
 app.use('/',      rootRouter)
-app.listen(config.port);
+app.listen(process.env.PORT || config.port);
