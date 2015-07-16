@@ -2,12 +2,19 @@
   <head>
     <title>Test Page</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <form id="convert-demo-form">
-      <input name="convert[url]" type="url" />
-      <input id="submit-url-button" type="submit" />
-    </form>
+    <div class="container">
+      <h3 class="form-group ">Load you first Reading View</h3>
+      <div class="form-inline">
+        <form id="convert-demo-form" class="form-group ">
+          <input name="convert[url]" class="form-control" placeholder="Page URL"  type="url" />
+          <input id="submit-url-button"  class="btn btn-success" type="submit" />
+        </form>
+      </div>
+    </div>
     <div id="reading-view"></div>
     <script type="text/javascript">
       $('#submit-url-button').click(function (e) {
