@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Test Page</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  </head>
+  <body>
+    <form id="convert-demo-form">
+      <input name="convert[url]" type="url" />
+      <input id="submit-url-button" type="submit" />
+    </form>
+    <div id="reading-view"></div>
+    <script type="text/javascript">
+      $('#submit-url-button').click(function (e) {
+        var url = $("input[name='convert[url]']").val();
+        if($("#convert-demo-form")[0].checkValidity()) {
+          e.preventDefault();
+          $.get('/api/convert?url=' + url, function (res) {
+            if(res.status == "Success") {
+              $("#reading-view").html(res.body);
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+
+</html>

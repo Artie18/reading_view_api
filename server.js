@@ -7,6 +7,9 @@ var apiRouterFunc = routers.apiRouter;
 var app        = express(),
     apiRouter  = express.Router();
 
+
+app.use("/public", express.static(`${__dirname}/public`));
+
 // Routing
 // Params - url:String
 apiRouter.get('/convert', apiRouterFunc.get.convert);
