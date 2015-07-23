@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Test Page</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h3 class="text-center">Try your html!</h3>
+      <div class="">
+        <form id="convert-demo-form" class="form-horizontal">
+          <input name="convert[url]" class="form-control" placeholder="Page URL"  type="url" />
+          <div id="submit-url-button"  class="form-control btn btn-success">Load and Paste HTML </div>
+          <textarea id="convert-html" style="height: 200pt" name="convert[html]" class="form-control" placeholder="Page URL"  type="url"></textarea>
+          <div id="render-html"  class="form-control btn btn-success">Render HTML</div>
+        </form>
+      </div>
+    </div>
+    <hr />
+    <div id="reading-view"></div>
+    <script type="text/javascript">
+      $('#submit-url-button').click(function (e) {
+        var url = $("input[name='convert[url]']").val();
+        if($("#convert-demo-form")[0].checkValidity()) {
+          e.preventDefault();
+          $.get('/api/convert?url=' + url, function (res) {
+            if(res.status == "Success") {
+              $("#convert-html").val(res.body);
+            }
+          });
+        }
+      });
+
+      $('#render-html').click(function (e) {
+        var html = $('#convert-html').val();
+        $('#reading-view').html(html);
+      });
+    </script>
+  </body>
+
+</html>

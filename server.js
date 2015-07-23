@@ -20,7 +20,8 @@ var app        = express(),
 apiRouter.get('/convert', apiRouterFunc.get.convert);
 
 // Demo Routers
-demoRouter.get('/index', demoRouterFunc.get.root);
+demoRouter.get('/', demoRouterFunc.get.root);
+demoRouter.get('/html/render/', demoRouterFunc.get.htmlRender)
 
 // Root Routers
 rootRouter.get('/', rootRouterFunc.get.root);
