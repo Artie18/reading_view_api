@@ -15,7 +15,7 @@
     "iojs": "2.3.x"
   },
   "dependencies": {
-    "reading_view": "0.1.x",
+    "reading_view": "x.x.x",
     "check-types":  "3.3.x",
     "forever":      "0.14.x",
     "body-parser":  "1.13.x",
