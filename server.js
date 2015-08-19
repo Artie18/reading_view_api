@@ -12,7 +12,7 @@ var app        = express(),
     demoRouter = express.Router(),
     rootRouter = express.Router();
 
-// app.use("/demo", express.static(`${__dirname}/public/demo`));
+app.use(express.static(`${__dirname}/public/assets`));
 
 // Routing
 // Api Routers
