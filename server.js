@@ -3,14 +3,14 @@ var express   = require('express'),
     routers   = require('./lib/routers/routers'),
     config    = require('./config');
 
+var PORT = process.env.PORT || config.port;
+
 var apiRouterFunc  = routers.apiRouter,
-    demoRouterFunc = routers.demoRouter,
-    rootRouterFunc = routers.rootRouter;
+    demoRouterFunc = routers.demoRouter;
 
 var app        = express(),
     apiRouter  = express.Router(),
-    demoRouter = express.Router(),
-    rootRouter = express.Router();
+    demoRouter = express.Router();
 
 app.use(express.static(`${__dirname}/public/assets`));
 
@@ -23,10 +23,9 @@ apiRouter.get('/convert', apiRouterFunc.get.convert);
 demoRouter.get('/', demoRouterFunc.get.root);
 demoRouter.get('/html/render/', demoRouterFunc.get.htmlRender)
 
-// Root Routers
-rootRouter.get('/', rootRouterFunc.get.root);
-
 app.use('/api',   apiRouter);
 app.use('/demo',  demoRouter);
-app.use('/',      rootRouter)
-app.listen(process.env.PORT || config.port);
+app.listen(PORT);
+
+
+console.log("Server is running on: " + PORT);
